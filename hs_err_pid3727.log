@@ -1,0 +1,86 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0x00007fd10e921ec0, pid=3727, tid=0x00007fd0bbc7e700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_342-b07) (build 1.8.0_342-8u342-b07-0ubuntu1~18.04-b07)
+# Java VM: OpenJDK 64-Bit Server VM (25.342-b07 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libzip.so+0x4ec0]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fd0ecbb2800):  JavaThread "RS-EventLoopGroup-1-17" daemon [_thread_in_native, id=4666, stack(0x00007fd0bbb7e000,0x00007fd0bbc7f000)]
+
+siginfo: si_signo: 7 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x00007fd0d49924dd
+
+Registers:
+RAX=0x000055e283f2c360, RBX=0x00007fd1096f0f90, RCX=0x00007fd0f401d510, RDX=0x000055e283f2c360
+RSP=0x00007fd0bbc7afb0, RBP=0x00007fd0bbc7b020, RSI=0x00007fd0f401d528, RDI=0x0000000000000000
+R8 =0x0000000030517ba7, R9 =0x000000000000005b, R10=0x00007fd0f9386b58, R11=0x00000003c6120d38
+R12=0x00000000000484bf, R13=0x0000000030517ba7, R14=0x000055e283f2c360, R15=0x00007fd0d49924bf
+RIP=0x00007fd10e921ec0, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fd0bbc7afb0)
+0x00007fd0bbc7afb0:   00007fd0bbc7b090 00007fd0bbc7b2a8
+0x00007fd0bbc7afc0:   00007fd00000000c 00007fd0d79893d8
+0x00007fd0bbc7afd0:   00007fd0ecbb2800 00007fd0ecbb2800
+0x00007fd0bbc7afe0:   0000000000000001 0000000010c807e1
+0x00007fd0bbc7aff0:   000000000000005b 00007fd1096f9570
+0x00007fd0bbc7b000:   000000000000005b 0000000030517ba7
+0x00007fd0bbc7b010:   00007fd1096f0f90 00007fd0f47cd200
+0x00007fd0bbc7b020:   00007fd0bbc7b070 00007fd10e922b6e
+0x00007fd0bbc7b030:   017974740000005b 00007fd0bbc7b090
+0x00007fd0bbc7b040:   00007fd0bbc7b090 000000000000005b
+0x00007fd0bbc7b050:   00007fd0ecbb2a58 00007fd0bbc7b4e8
+0x00007fd0bbc7b060:   00007fd0bbc7b090 00007fd1096f0f90
+0x00007fd0bbc7b070:   00007fd0bbc7b4d0 00007fd10e920b25
+0x00007fd0bbc7b080:   00007fd0bbc7b850 726f207400000001
+0x00007fd0bbc7b090:   636170612f67726f 6f6f6461682f6568
+0x00007fd0bbc7b0a0:   2f65736162682f70 702f646564616873
+0x00007fd0bbc7b0b0:   2f6675626f746f72 65746172656e6567
+0x00007fd0bbc7b0c0:   6f72504350522f64 6563784524736f74
+0x00007fd0bbc7b0d0:   7365526e6f697470 75422465736e6f70
+0x00007fd0bbc7b0e0:   6c632e7265646c69 00007f0000737361
+0x00007fd0bbc7b0f0:   00007fd0bbc7b2f0 00007fd0bbc7b2a0
+0x00007fd0bbc7b100:   00007fd0bbc7b160 00007fd0bbc7b1a0
+0x00007fd0bbc7b110:   00007fd0bbc7b290 00007fd110a6ef3e
+0x00007fd0bbc7b120:   00007fd0bbc7b6c0 00007fd0bbc7b1e0
+0x00007fd0bbc7b130:   00007fd0bbc7b150 00007fd0ecbb2a58
+0x00007fd0bbc7b140:   00007fd111dc6fa0 00007fd0ec733a18
+0x00007fd0bbc7b150:   00007fd0d79893d8 00007fd0ecbb2800
+0x00007fd0bbc7b160:   00007fd0d79893d8 00007fd0ecbb2800
+0x00007fd0bbc7b170:   00007fd0ecb7c6d0 000055e283e89b60
+0x00007fd0bbc7b180:   000055e283e89b70 000055e283e89f48
+0x00007fd0bbc7b190:   00000000000003d8 742e657300000000
+0x00007fd0bbc7b1a0:   00007fd0d79893d8 00007fd0ecbb2800 
+
+Instructions: (pc=0x00007fd10e921ec0)
+0x00007fd10e921ea0:   00 00 00 48 c7 40 28 00 00 00 00 4d 8b 24 24 0f
+0x00007fd10e921eb0:   84 1b 01 00 00 4c 2b 63 28 4c 8b 7b 18 4d 01 e7
+0x00007fd10e921ec0:   41 0f b7 47 1e 45 0f b7 6f 1c 45 31 e4 66 89 45
+0x00007fd10e921ed0:   ca 41 0f b7 47 20 44 89 ea 66 89 45 c8 41 8b 47 
+
+Register to memory mapping:
+
+RAX=0x000055e283f2c360 is an unknown value
+RBX=0x00007fd1096f0f90 is an unknown value
+RCX=0x00007fd0f401d510 is an unknown value
+RDX=0x000055e283f2c360 is an unknown value
+RSP=0x00007fd0bbc7afb0 is pointing into the stack for thread: 0x00007fd0ecbb2800
+RBP=0x00007fd0bbc7b020 is pointing into the stack for thread: 0x00007fd0ecbb2800
+RSI=0x00007fd0f401d528 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x0000000030517ba7 is an unknown value
+R9 =0x000000000000005b is an unknown value
+R10=0x00007fd0f9386b58 is at entry_point+88 in (nmethod*)0x00007fd0f9386990
+R11=0x00000003c6120d38 is pointing into object: 0x00000003c0491118
